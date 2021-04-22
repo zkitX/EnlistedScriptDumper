@@ -80,7 +80,7 @@ file_info_t* __fastcall hk_get_file_info(void* thisptr, const char* file_name)
     if (MakeSureDirectoryPathExists(std::string("C:\\Enlisted\\dascript\\" + name).c_str()))
     {
         std::ofstream file("C:\\Enlisted\\dascript\\" + name, std::ofstream::out);
-        file << std::string(info->source, info->source + info->source_length);
+        file << std::string(info->source, info->source + info->source_length).c_str();
         file.close();
     }
 
@@ -103,7 +103,7 @@ uintptr_t __fastcall hk_sq_compile(void* v, void* read, buf_state_t* p, char* so
     if (MakeSureDirectoryPathExists(std::string("C:\\enlisted\\quirrel\\" + name).c_str()))
     {
         std::ofstream file("C:\\enlisted\\quirrel\\" + name, std::ofstream::out);
-        file << std::string(p->buf, p->buf + p->size);
+        file << std::string(p->buf, p->buf + p->size).c_str();
         file.close();
     }
 
