@@ -132,8 +132,6 @@ bool HookFunctions() {
     printf("getFileInfoAddr is: %p\n", (PVOID)getFileInfoAddr);
     printf("sqCompileAddr is: %p\n", (PVOID)sqCompileAddr);
 
-    Sleep(10000);
-
     status = MH_CreateHook((LPVOID)getFileInfoAddr, hk_get_file_info, reinterpret_cast<LPVOID*>(&o_get_file_info));
     printf("MinHook hook creation getFileInfoAddr: %s\n", status != MH_STATUS::MH_OK ? "Not successful" : "Successful");
 
